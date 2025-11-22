@@ -130,16 +130,42 @@ details > summary::-webkit-details-marker {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 移动端适配：在手机上改为上下排列 */
+/* --- 移动端适配代码 (添加在 CSS 文件最底部) --- */
 @media (max-width: 768px) {
+    /* 1. 让身体恢复默认滚动，取消固定高度 */
+    body {
+        height: auto;
+        overflow: auto;
+    }
+
+    /* 2. 改变布局方向：从“左右”变为“上下” */
     .container {
         flex-direction: column;
+        height: auto;
     }
+
+    /* 3. 左侧图片区域调整 */
     .left-panel {
-        flex: 1; /* 图片占一半或固定高度 */
-        height: 40vh;
+        width: 100%;       /* 宽度占满 */
+        height: 40vh;      /* 高度占屏幕的 40% */
+        flex: none;        /* 取消 flex 比例限制 */
     }
+
+    /* 4. 右侧内容区域调整 */
     .right-panel {
-        flex: 1.5;
+        width: 100%;       /* 宽度占满 */
+        flex: none;
+        padding: 20px;     /* 减小内边距，节省空间 */
+        border-left: none; /* 去掉左边的分割线 */
+    }
+
+    /* 5. 调整字体大小，防止手机上字太大 */
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .accordion-title {
+        font-size: 16px;
+        padding: 12px 0;
     }
 }
