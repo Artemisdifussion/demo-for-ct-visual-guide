@@ -11,44 +11,67 @@
 
     <div class="container">
         <div class="left-panel">
-            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2070&auto=format&fit=crop" alt="产品主图" id="main-image">
+            <!-- 
+                提示：修改图片
+                将 src="assets/images/main.jpg" 改为你自己的图片路径
+                确保你的图片放在 assets/images/ 文件夹中
+            -->
+            <img src="assets/images/main.jpg" alt="产品主图" id="main-image" onerror="this.src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2070&auto=format&fit=crop'">
         </div>
 
         <div class="right-panel">
             <div class="header">
-                <h1>产品系列</h1>
-                <p>点击下方标题观看视频</p>
+                <h1>我的产品系列</h1>
+                <p>点击下方标题观看演示视频</p>
             </div>
 
+            <!-- 第 1 项：本地视频演示 -->
             <details class="accordion-item" open>
                 <summary class="accordion-title">
-                    <i class="fa-solid fa-circle-play"></i> 产品功能演示 A
+                    <i class="fa-solid fa-circle-play"></i> 
+                    <!-- 修改标题：在这里改文字 -->
+                    肺结节分析/Lung Nodule Analysis
                 </summary>
                 <div class="accordion-content">
                     <div class="video-wrapper">
-                       <iframe src="//player.bilibili.com/player.html?bvid=BV1GJ411x7h7&page=1&high_quality=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                        <!-- 
+                            提示：修改视频
+                            src="assets/videos/demo.mp4" 是你的视频文件路径
+                            确保视频放在 assets/videos/ 文件夹中
+                        -->
+                        <video controls>
+                            <source src="assets/videos/demo.mp4" type="video/mp4">
+                            您的浏览器不支持 Video 标签。
+                        </video>
                     </div>
-                    <p class="desc">这里是关于该视频的简短描述。</p>
+                    <p class="desc">请将视频文件重命名为 demo.mp4 并放入 assets/videos 文件夹，或者修改代码中的文件名。</p>
                 </div>
             </details>
 
+            <!-- 第 2 项：在线视频演示 (Bilibili) -->
             <details class="accordion-item">
                 <summary class="accordion-title">
-                    <i class="fa-solid fa-cube"></i> 设计细节解析
+                    <i class="fa-solid fa-cube"></i> 
+                    <!-- 修改标题 -->
+                    脑部灌注/Brain Perfusion
                 </summary>
                 <div class="accordion-content">
                     <div class="video-wrapper">
                         <iframe src="//player.bilibili.com/player.html?bvid=BV1GJ411x7h7&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
                     </div>
+                    <p class="desc">这是一个 Bilibili 在线视频示例。</p>
                 </div>
             </details>
 
+            <!-- 第 3 项：图片或文字 -->
             <details class="accordion-item">
                 <summary class="accordion-title">
-                    <i class="fa-solid fa-star"></i> 用户评价反馈
+                    <i class="fa-solid fa-star"></i> 
+                    <!-- 修改标题 -->
+                    血管分析/Vascular Analysis
                 </summary>
                 <div class="accordion-content">
-                     <p>这里可以放视频，也可以放纯文字介绍。</p>
+                     <p class="desc">这里可以放纯文字介绍，或者再放一张图片。</p>
                 </div>
             </details>
 
