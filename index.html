@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品展示 - Product Showcase</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-panel">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2070&auto=format&fit=crop" alt="产品主图" id="main-image">
+        </div>
+
+        <div class="right-panel">
+            <div class="header">
+                <h1>产品系列</h1>
+                <p>点击下方标题观看视频</p>
+            </div>
+
+            <details class="accordion-item" open>
+                <summary class="accordion-title">
+                    <i class="fa-solid fa-circle-play"></i> 产品功能演示 A
+                </summary>
+                <div class="accordion-content">
+                    <div class="video-wrapper">
+                       <iframe src="//player.bilibili.com/player.html?bvid=BV1GJ411x7h7&page=1&high_quality=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                    </div>
+                    <p class="desc">这里是关于该视频的简短描述。</p>
+                </div>
+            </details>
+
+            <details class="accordion-item">
+                <summary class="accordion-title">
+                    <i class="fa-solid fa-cube"></i> 设计细节解析
+                </summary>
+                <div class="accordion-content">
+                    <div class="video-wrapper">
+                        <iframe src="//player.bilibili.com/player.html?bvid=BV1GJ411x7h7&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                    </div>
+                </div>
+            </details>
+
+            <details class="accordion-item">
+                <summary class="accordion-title">
+                    <i class="fa-solid fa-star"></i> 用户评价反馈
+                </summary>
+                <div class="accordion-content">
+                     <p>这里可以放视频，也可以放纯文字介绍。</p>
+                </div>
+            </details>
+
+        </div>
+    </div>
+
+    <script>
+        const details = document.querySelectorAll("details");
+        details.forEach((targetDetail) => {
+            targetDetail.addEventListener("click", () => {
+                details.forEach((detail) => {
+                    if (detail !== targetDetail) {
+                        detail.removeAttribute("open");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
